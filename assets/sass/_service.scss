@@ -1,0 +1,52 @@
+	// Service 1
+.single_service_item {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 25px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    @include transition(all, .3s, ease-in-out);
+    h4 {
+	    color: $brand;
+	    margin: 20px 0;
+	}
+
+	p {
+	    font-size: 14px;
+	    line-height: 1.5;
+	    color: $text_2;
+	}
+
+	&:hover {
+	    background: #fff;
+	    box-shadow: 9px 28px 48px #ecebeb;
+	    .service_img{ filter: grayscale(0); }
+	}
+
+	.service_img {
+		filter: grayscale(1);
+	    width: 100px;
+	    height: 100px;
+	    display: inline-block;
+	    overflow: hidden;
+    	@include transition(all, .3s, ease-in-out);
+
+	}
+}
+
+
+
+
+	// Responsive
+@media #{$medium_device}{
+
+}
+@media #{$tab_device}{
+
+}
+@media #{$small_mobile}{
+
+}
+@media #{$large_mobile}{
+
+}

@@ -1,0 +1,142 @@
+    // pre loader
+.preloader{ 
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	z-index: 99900;
+    text-align: center;
+	transition: 1s;
+	&:before, &:after{
+    	position: absolute;
+    	top: 0;
+    	content: '';
+    	width: 50%;
+    	height: 100%;
+    	background: #000;
+    	transition: 1s;
+	}
+	&:after{
+    	left: auto;
+    	right: 0; 
+	}
+	&:before{
+    	right: auto;
+    	left: 0; 
+	}
+}
+
+.preloader.complete{ opacity: 0; visibility: hidden; }
+.preloader.complete:after{ right: -50%; }
+.preloader.complete:before{ left: -50%; }
+.loader.completein{ opacity: 0; }
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index:3;
+  border: 4px solid #Fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+
+    // Scroll to top
+.scrolltop {
+    width: 40px;
+    height: 50px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: -50px;
+    right: 30px;
+    opacity: 0;
+    z-index: 99; 
+    background: $brand;
+    cursor: pointer;
+    text-align: center;   
+    @include boxshadow(0px, 12px, 15px, 0px, rgba(0, 0, 0, 0.3), false);
+    @include transition(all,.3s,ease-in-out);
+    &.is_scroll{
+        opacity: 1;
+        bottom: 50px;
+    }
+    i { 
+        margin-top: 12px;
+        line-height: 1.5;
+        display: inline-block;
+        font-size: 18px;
+        color: #fff;
+    }
+    &:hover{
+        bottom: 55px;
+    }
+}
+
+
+
+@media #{$small_mobile}{
+    .scrolltop {
+        width: 30px;
+        height: 40px;
+        &.is_scroll{ bottom: 40px; }
+        i { 
+            margin-top: 8px;
+            font-size: 14px; 
+        }
+        &:hover{ bottom: 45px; }
+    }
+}

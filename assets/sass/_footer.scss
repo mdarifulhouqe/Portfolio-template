@@ -1,0 +1,26 @@
+	// Footer
+.simple_clean{ 
+	height: 80px;
+	@include bg_property;
+	background: url('../img/concrete.jpg');
+	a{ color: $brand; margin-left: 15px; text-decoration: underline; }
+	p{ color: $text_2; }
+}
+
+	// Responsive
+@media #{$medium_device}{
+
+}
+@media #{$tab_device}{
+
+}
+@media #{$small_mobile}{
+	.simple_clean{ 
+		text-align: center;
+		a{  margin-left: 0px; }
+		p{  margin-bottom: 15px; font-size: 14px; }
+	}
+}
+@media #{$large_mobile}{
+
+}

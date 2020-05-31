@@ -1,0 +1,145 @@
+
+.hero_area{
+	position: relative;
+	height: 700px;
+	z-index: 9;
+	background: url('../img/concrete.jpg');
+	.hero_content{
+		padding-bottom: 110px;
+		h1 {		
+			color: $heading;
+			font-weight: 700;
+		    font-size: 60PX; 
+		    letter-spacing: 1px;
+		    text-transform: uppercase;
+		    display: inline-block;
+		    span{ color: $brand; }
+		}
+
+		p {   		
+			margin: 20px 0 60px;  
+			display: inline-block;
+		} 
+		.primary-btn {
+		    color: #fff;
+		    background: $brand;
+		    display: inline-block;
+		    padding: 10px;
+		    box-shadow: 0px 10px 10px 0px rgba($brand, .3);
+		    margin-right: 15px;
+		    @include transition(all, .3s, ease-in-out);
+		    margin-bottom: 30px;
+		    &:hover{ box-shadow: none; }
+		}
+		.secondery-btn {
+		    color: #fff;
+		    background: $text;
+		    display: inline-block;
+		    padding: 10px;
+		    box-shadow: 0px 10px 10px 0px rgba($text, .3);
+		    @include transition(all, .3s, ease-in-out);
+		    margin-bottom: 30px;
+		    &:hover{ box-shadow: none; }
+		}
+	}
+
+	.img_warpp3{
+		position: absolute;
+		z-index: -1;
+		bottom: 0;
+		right: 0px;
+		img{ width: 90%; }
+	}
+	.client_list {
+	    margin-top: 10px;
+		li {
+		    display: inline-block;
+		    height: 50px;
+		    margin-right: 8px;
+		    img {
+			    height: 100%;
+			}
+		}
+	}
+
+}
+
+.bios_area {
+    position: relative;
+    top: -70px;
+    z-index: 11;
+    .bios_details {
+	    background: #fff;
+	    padding: 20px;
+	    border-radius: 20px;
+	    box-shadow: 0px 15px 25px 0 #00000014;
+		p {
+		    line-height: 1.5;
+		    font-size: 14px;
+		    color: $text;
+		}
+	}
+}
+
+
+.heading {
+	h2 {
+	    font-size: 36px;
+	    margin-bottom: 10px;
+	    color: $heading;
+	}
+    p{ font-size: 14px; margin-bottom: 35px; }
+}
+// For Medium device
+@media #{$medium_device}{
+	.hero_area{
+		.hero_content{
+			h1 { font-size: 48PX; }
+			p {  margin: 20px 0 60px; } 
+		}
+		.img_warpp3{ right: -60px; }
+	}
+
+}
+
+// For Tab device
+@media #{$tab_device}{ 
+	.hero_area{
+		height: 600px;
+		.hero_content{
+			padding-bottom: 120px;
+			h1 {  font-size: 36PX; }
+			p {   		
+				margin: 15px 0 40px; 
+				padding-right: 20px; 
+			} 
+		}
+		.img_warpp3{ right: -120px; img{ width: 80%; }}
+	}
+
+}
+
+// For Mobile 
+@media #{$small_mobile}{ 
+	.hero_area{
+		height: 600px;
+		.hero_content{
+			padding-bottom: 100px;
+			h1 {  font-size: 24PX; }
+			p {   		
+				margin: 15px 0 40px;  
+			} 
+		}
+		.img_warpp3{ right: -100px; }
+		.client_list {
+		    margin-top: 10px;
+			li { 
+			    height: 30px;
+			    margin-right: 5px; 
+			}
+		}
+	}
+	.heading {
+		h2 { font-size: 28px; }
+	}
+}
